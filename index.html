@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <h1 class="header">Rock, Paper, And Scissors</h1>    
+    <div class="wrapper">
+        <div class="score">
+            <div class="player">0</div>
+            <div class="margin">-</div>
+            <div class="computer">0</div>
+        </div>
+        <div class="print"></div>
+        <div class="inner-container">
+          <div class="box">
+            <div class="holder" value="rock">
+                <img src="img/rock.png" alt="rock" class="image">
+            </div>
+            <div class="box-text">Rock</div>
+          </div>
+          <div class="box">
+            <div class="holder" value="paper">
+                <img src="img/paper.png" alt="paper" class="image">
+            </div>
+            <div class="box-text">Paper</div>
+          </div>
+          <div class="box">
+            <div class="holder" value="scissors">
+                <img src="img/scissors.png" alt="scissors" class="image">
+            </div>
+            <div class="box-text">Scissors</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="restart-game">
+        <button class="restart-btn">reset</button>
+    </div>
+
+
+    <script src="js/index.js"></script>
+    <script>
+         console.log(getComputerChoice())
+    </script>
+   
+
+</body>
+
+</html>
