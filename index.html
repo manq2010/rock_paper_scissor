@@ -2,56 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
 
-    <title>Rock Paper Scissors</title>
+  <title>Rock Paper & Scissors</title>
 </head>
 
 <body>
 
-    <h1 class="header">Rock, Paper, And Scissors</h1>    
-    <div class="wrapper">
-        <div class="score">
-            <div class="player">0</div>
-            <div class="margin">-</div>
-            <div class="computer">0</div>
+  <div class="game-contain">
+    <div class="nav-bar">
+      <div class="text">
+        Rock Paper Scissors
+      </div>
+    </div>
+
+    <div class="display-welcome-text">
+      <p class="text-inner">
+        welcome to the man vs computer game
+      </p>
+    </div>
+
+    <div class="diplay-scores">
+      0-1
+    </div>
+
+    <div class="inner-display">
+      <p class="inner-text">You won this round</p>
+    </div>
+
+    <div class="selection-container">
+      <div class="man-container">
+        <div class="buttons" data-button="rock">
+          <img src="img/hand-rock-grey.svg" alt="rock">
+          <span class="text-button">rock</span>
+          <span class="sound"></span>
         </div>
-        <div class="print"></div>
-        <div class="inner-container">
-          <div class="box">
-            <div class="holder" value="rock">
-                <img src="img/rock.png" alt="rock" class="image">
-            </div>
-            <div class="box-text">Rock</div>
-          </div>
-          <div class="box">
-            <div class="holder" value="paper">
-                <img src="img/paper.png" alt="paper" class="image">
-            </div>
-            <div class="box-text">Paper</div>
-          </div>
-          <div class="box">
-            <div class="holder" value="scissors">
-                <img src="img/scissors.png" alt="scissors" class="image">
-            </div>
-            <div class="box-text">Scissors</div>
-          </div>
+
+        <div class="buttons" data-button="paper">
+          <img src="img/hand-paper-grey.svg" alt="paper">
+          <span class="text-button">paper</span>
+          <span class="sound"></span>
         </div>
+
+        <div class="buttons" data-button="scissors">
+          <img src="img/hand-scissors-grey.svg" alt="scissors">
+          <span class="text-button">scissors</span>
+          <span class="sound"></span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="computer-container">
+      <div class="image-display">
+        Computor Selection
+      </div>
     </div>
 
     <div class="restart-game">
-        <button class="restart-btn">reset</button>
+      <!-- hide button during playing -->
+      <!-- buttonPlayAgain.style.visibility = 'visible'; -->
+      <button class="restart-btn">reset</button>
     </div>
 
 
-    <script src="js/index.js"></script>
-    <script>
-         console.log(getComputerChoice())
-    </script>
-   
+  </div>
+
+  <audio data-button="rock" src="sounds/boom.wav"></audio>
+  <audio data-button="paper" src="sounds/clap.wav"></audio>
+  <audio data-button="scissors" src="sounds/tom.wav"></audio>
+
+
+  <script src="js/index.js" defer></script>
+  <script>
+
+  </script>
+
 
 </body>
 
