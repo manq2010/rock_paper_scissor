@@ -25,8 +25,21 @@
       </p>
     </div>
 
-    <div class="diplay-scores">
-      0-1
+    <div class="display-scores">
+
+      <div class="text-holder">
+        <h3 class="text-player">man score</h3>
+        <div class="man-score">
+          0
+        </div>
+      </div>
+      <div class="text-holder">
+        <h3 class="text-player">computer score</h3>
+        <div class="computer-score">
+          0
+        </div>
+      </div>
+
     </div>
 
     <div class="inner-display">
@@ -34,32 +47,53 @@
     </div>
 
     <div class="selection-container">
+      <div class="playground">
+        Battlefield
+      </div>
       <div class="man-container">
-        <div class="buttons" data-button="rock">
-          <img src="img/hand-rock-grey.svg" alt="rock">
-          <span class="text-button">rock</span>
-          <span class="sound"></span>
+        <div class="text-selection">
+          player choice =>
         </div>
 
-        <div class="buttons" data-button="paper">
-          <img src="img/hand-paper-grey.svg" alt="paper">
-          <span class="text-button">paper</span>
-          <span class="sound"></span>
-        </div>
 
-        <div class="buttons" data-button="scissors">
-          <img src="img/hand-scissors-grey.svg" alt="scissors">
-          <span class="text-button">scissors</span>
-          <span class="sound"></span>
-        </div>
+        <div class="buttons-container">
+          <div class="buttons" data-button="rock">
+            <img src="img/hand-rock-grey.svg" alt="rock">
+            <span class="text-button">rock</span>
+          </div>
 
+          <div class="buttons" data-button="paper">
+            <img src="img/hand-paper-grey.svg" alt="paper">
+            <span class="text-button">paper</span>
+          </div>
+
+          <div class="buttons" data-button="scissors">
+            <img src="img/hand-scissors-grey.svg" alt="scissors">
+            <span class="text-button">scissors</span>
+          </div>
+        </div>
       </div>
 
-    </div>
+      <div class="computer-container">
+        <div class="text-selection">
+          computer choice =>
+        </div>
+        <div class="buttons-container">
+          <div class="buttons-computer" data-button="rock">
+            <img src="img/hand-rock-grey.svg" alt="rock">
+            <span class="text-button">rock</span>
+          </div>
 
-    <div class="computer-container">
-      <div class="image-display">
-        Computor Selection
+          <div class="buttons-computer" data-button="paper">
+            <img src="img/hand-paper-grey.svg" alt="paper">
+            <span class="text-button">paper</span>
+          </div>
+
+          <div class="buttons-computer" data-button="scissors">
+            <img src="img/hand-scissors-grey.svg" alt="scissors">
+            <span class="text-button">scissors</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -69,13 +103,7 @@
       <button class="restart-btn">reset</button>
     </div>
 
-
   </div>
-
-  <audio data-button="rock" src="sounds/boom.wav"></audio>
-  <audio data-button="paper" src="sounds/clap.wav"></audio>
-  <audio data-button="scissors" src="sounds/tom.wav"></audio>
-
 
   <script src="js/index.js" defer></script>
   <script>

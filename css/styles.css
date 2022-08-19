@@ -5,12 +5,12 @@
 
 }
 
-*,
+/* *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-}
+} */
 
 /* .header {
     text-align: center;
@@ -67,31 +67,38 @@
 
 /* ajdflk */
 
-.man-container {
+.game-contain {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: auto;
-    width: auto;
-    background-color: black;
-    padding: 5%;
+    flex-direction: column;
+    font-size: large;
+    font-weight: 900;
+    height: 600px;
+    border: #666626 solid 2px;
+    padding: 1rem;
+    margin: 0.5rem;
 }
+
+
 .nav-bar {
     display: grid;
     place-items: center;
-    margin: 2rem;
+    margin-top: 1rem;
     padding: 0;
-
+    position: relative;
 }
 
 .text {
-    /* align-self: center;
-    justify-self: center; */
+
     font-style: bold;
-    /* border: red solid 2px; */
-    font-weight: 900;
-    font-size: 5vw;
-    padding: 20px;
+    font-weight: 90%;
+    font-size: 150%;
+    padding: 0;
+    position: relative;
+
+}
+
+.text:hover {
+    left: -5px;
 }
 
 @keyframes text {
@@ -107,108 +114,158 @@
 .display-welcome-text {
     display: grid;
     place-items: center;
-    width: auto;
-    height: auto;
     animation-name: text;
     animation-duration: 4s;
-    margin: 2rem;
-    padding: 1rem;
+    margin: 0rem;
+    padding: .5rem;
 }
 
 .text-inner {
-    font-weight: 600;
-    font-size: 3vw;
+    font-size: 90%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: capitalize;
+    position: relative;
 }
 
 .text-inner:hover {
-    animation-name: text;
-    animation-duration: 4s;
+    left: -5px;
 }
 
-.diplay-scores {
-    /* display: none; */
-    height: 50px;
-    /* border: red solid 3px; */
-    font-size: 30px;
+.display-scores {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+h3 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+h3:hover {
+    left: -5px
+}
+
+.text-holder {
     display: grid;
     place-items: center;
+}
+
+.man-score,
+.computer-score {
+    font-size: 110%;
+    position: relative;
+}
+
+.man-score:hover,
+.computer-score:hover {
+    font-size: 130%;
 }
 
 .inner-display {
-
-    height: 50px;
     display: grid;
     place-items: center;
+    position: relative;
+    margin: 1rem;
+}
+
+.inner-text {
+    position: relative;
+    font-size: 90%;
+    height: 20px;
+    /* display: none; */
+}
+
+.inner-text:hover {
+    left: -5px;
+}
+
+.selection-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    position: relative;
+    background-color: aquamarine;
+}
+
+.playground {
+    display: grid;
+    place-items: center;
+    background-color: inherit;
+    text-transform: uppercase;
+    color: brown;
+    margin: 1rem;
+}
+
+.man-container {
+    height: 120px;
+    display: flex;
+    justify-content: 1px;
+    gap: 38%;
+    background-color: inherit;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.buttons {
-    height: auto;
-    /* border: red solid 3px; */
-    background-color: black;
+.computer-container {
+    height: 120px;
+    display: flex;
+    justify-content: 1px;
+    gap: 38%;
+    background-color: inherit;
+    margin-bottom: 0;
+}
 
-    margin: 20px;
-    position: relative;
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50%;
+    background-color: inherit;
+}
+
+.text-selection {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    background-color: inherit;
+}
+
+
+.buttons-computer,
+.buttons {
+    background-color: inherit;
 
 }
 
 img {
-    cursor: pointer;
-    width: 500px;
-    height: 500px;
-    /* border: green solid 2px; */
-    max-width: 90%;
-    height: 90%;
-    background-color: black;
-}
-
-.text-button {
-    font-weight: 500;
-    position: absolute;
-    top: 105%;
-    left: 50%;
-    max-width: 90%;
-    background-color: black;
-    color: #fff;
+    background-color: inherit;
+    height: 50%;
 
 }
 
-.computer-container {
-    margin-top: 2rem;
-    display: grid;
-    place-items: center;
-    /* border: red solid 2px; */
-}
-
-.image-display {
-    display: none;
-    width: 500px;
-    height: 500px;
-    max-width: 90%;
-    height: 90%;
-    background-color: black;
+span {
+    background-color: inherit;
 }
 
 .restart-game {
-    margin: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 0.4rem;
+    display: grid;
+    place-items: center;
 }
 
-.restart-btn {
-    padding: 10px;
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 25px;
-    color: #fff;
-    background-color: black;
-    border-color: black;
-    border-radius: 8px;
-    position: relative;
+ .restart-btn {
+    border: brown solid 2px;
+    font-size: 90%;
+    background-color: brown;
 }
 
 .restart-btn:hover {
-    top: -5px;
+    color: white;
 }

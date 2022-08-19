@@ -1,11 +1,36 @@
-const printMessage = document.querySelector('.print')
-const updateScorePlayer = document.querySelector('.player')
-const updateScoreComputer = document.querySelector('.computer')
-const imagesRPS = Array.from(document.querySelectorAll('.image'))
+const imageClick = document.querySelectorAll('.buttons')
+const printMessage = document.querySelector('.inner-text')
+const updateScorePlayer = document.querySelector('.man-score')
+const updateScoreComputer = document.querySelector('.computer-score')
 const resetBtn = document.querySelectorAll('.restart-btn')
-// const printMessage = document.getElementsByClassName('print')
-const updateScore = document.querySelectorAll('.score')
-console.log(printMessage)
+
+// const container = document.querySelector('.restart-game')
+// const content = document.createElement('button')
+// content.classList.add('restart-btn')
+// content.textContent = 'reset'
+// content.setAttribute('style', 'font-size: 90%; background-color: brown;')
+
+
+
+// console.log(resetBtn)
+
+printMessage.textContent = 'Please Select your Choice to begin Round!'
+
+let scorePlayer = 0;
+let scoreComputer = 0;
+
+imageClick.forEach(button => button.addEventListener('click', () => {
+    // console.log(button.attributes[1].value)
+    if (scorePlayer == 5 || scoreComputer == 5) {
+        // container.appendChild(content);
+        return
+    }
+    else {
+        game(button.attributes[1].value)
+    }
+}))
+
+
 
 resetBtn.forEach((resetsBtn) =>
     resetsBtn.addEventListener('click', () => {
@@ -14,19 +39,17 @@ resetBtn.forEach((resetsBtn) =>
         // console.log(resetsBtn)
         updateScorePlayer.textContent = scorePlayer
         updateScoreComputer.textContent = scoreComputer
-        printMessage.textContent = ''
+        printMessage.textContent = 'Another Round! Please Select your Choice'
     }))
 
-let scorePlayer = 0;
-let scoreComputer = 0;
-
-imagesRPS.forEach((imageRPS) =>
-    imageRPS.addEventListener('click', () => {
-        if (scorePlayer >= 5 || scoreComputer >= 5) {
-            return;
-        }
-        console.log(imageRPS.alt)
-        game(imageRPS.alt)
+content.forEach((contents) =>
+contents.addEventListener('click', () => {
+        scorePlayer = 0;
+        scoreComputer = 0;
+        // console.log(resetsBtn)
+        updateScorePlayer.textContent = scorePlayer
+        updateScoreComputer.textContent = scoreComputer
+        printMessage.textContent = 'Another Round! Please Select your Choice'
     }))
 
 // resetBtn = () => resets.addEventListener('click', () => {
@@ -44,7 +67,7 @@ function game(playerSelect) {
 
     if (RoundResult.search('You Won!') > -1) {
         scorePlayer++
-    } else {
+    } else if (RoundResult.search('You Lose!') > -1) {
         scoreComputer++
     }
 
@@ -53,11 +76,18 @@ function game(playerSelect) {
     printMessage.textContent = RoundResult
 
     if (scorePlayer >= 5 && scoreComputer < 5) {
-        printMessage.textContent = 'Game Over. You Win!\n\n Press Reset to Play again';
-      } else if (scorePlayer < 5 && scoreComputer >= 5) {
-        printMessage.textContent = 'Game Over. You Lose!\n\n Press Reset to Play again';
-      }
-    
+        container.appendChild(content)
+        
+        printMessage.textContent = `Game Over. You Win this Round! \n\n You can still win again\n Press Reset to Play again`;
+
+    } else if (scorePlayer < 5 && scoreComputer >= 5) {
+        
+        container.appendChild(content)
+        
+        printMessage.textContent = `Game Over. You Lost this Round!\n\n Wanna Try your luck again! \nPress Reset to Play again`;
+
+    }
+
 }
 
 function getComputerChoice() {
@@ -92,12 +122,8 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
         result = "You Won! Rock beats Scissor"
         console.log(result)
-    } else if (playerSelection == computerSelection) {
-        result = "It's a draw!"
-        console.log(result)
-    }
-    else {
-        result = "Invalid input"
+    } else {
+        result = "It's a tie!"
         console.log(result)
     }
     return result
